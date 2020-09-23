@@ -1,10 +1,6 @@
 /*
 * Note: This template uses some c++11 functions , so you have to compile it with c++11 flag.
 *       Example:-   $ g++ -std=c++11 c++Template.cpp
-*
-* Author : Akshay Pratap Singh
-* Handle: code_crack_01
-*
 */
  
 /********   All Required Header Files ********/
@@ -43,7 +39,8 @@ using namespace std;
 #define SCF(t) scanf("%f",&t)
 #define SCLF(t) scanf("%lf",&t)
 #define MEM(a, b) memset(a, (b), sizeof(a))
-#define FOR(i, j, k, in) for (int i=j ; i<k ; i+=in)
+#define FOR(n) for (int i=0 ; i<n ; i++)
+#define FOR2(i, j, k, in) for (int i=j ; i<k ; i+=in)
 #define RFOR(i, j, k, in) for (int i=j ; i>=k ; i-=in)
 #define REP(i, j) FOR(i, 0, j, 1)
 #define RREP(i, j) RFOR(i, j, 0, 1)
@@ -58,6 +55,7 @@ using namespace std;
 #define PI 3.1415926535897932384626433832795
 #define MOD 1000000007
 #define read(type) readInt<type>()
+#define ar array
 const double pi=acos(-1.0);
 typedef pair<int, int> PII;
 typedef vector<int> VI;
@@ -113,45 +111,26 @@ template <typename T> inline T readInt()
 
 	return n*s;
 }
-/************************************/
 
-
-/******* Debugging Class Template *******/
-#define DEBUG
-
-#ifdef DEBUG
-
-    #define debug(args...)     (Debugger()) , args
-
-    class Debugger
-    {
-        public:
-        Debugger(const std::string& _separator = " - ") :
-        first(true), separator(_separator){}
-
-        template<typename ObjectType> Debugger& operator , (const ObjectType& v)
-        {
-            if(!first)
-                std:cerr << separator;
-            std::cerr << v;
-            first = false;
-            return *this;
-        }
-        ~Debugger() {  std:cerr << endl;}
-
-        private:
-        bool first;
-        std::string separator;
-    };
-
-#else
-    #define debug(args...)                  // Just strip off all debug tokens
-#endif
 
 /**************************************/
 
 /******** User-defined Function *******/
 
+void solve(){
+
+	int n;
+	cin >> n;
+
+	VI numbers, numbers2;
+
+	FOR(n){
+		numbers.PB(i);
+		cout << numbers[i] << " ";
+	}
+
+
+}
 
 /**************************************/
 
@@ -159,18 +138,28 @@ template <typename T> inline T readInt()
 /********** Main()  function **********/
 int main()
 {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0); 
 
-	#ifndef ONLINE_JUDGE
-	freopen("input.txt","r",stdin);
-	//freopen("output.txt","w",stdout);
-	#endif
+   
+   	#ifndef ONLINE_JUDGE 
+   	freopen("input.txt", "r", stdin); 
+   	freopen("error.txt", "w", stderr); 
+   	freopen("output.txt", "w", stdout); 
+   	#endif 
+   
+   	int t;
 
-	int tc;
-	tc = read(int);
+   	cin >> t; 
 
-	while(tc--){
-		write(tc);
-	}
+   	FOR(t){
+      cout<<"Case #" << i << ": ";
+      solve(); 
+      cout << endl;
+   	} 
+   
+
+   	cerr<<"time taken : "<<(float)clock()/CLOCKS_PER_SEC<<" secs"<<endl; 
 	return 0;
 }
 /********  Main() Ends Here *************/
