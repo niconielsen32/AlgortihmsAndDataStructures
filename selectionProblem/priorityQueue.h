@@ -22,12 +22,19 @@ public:
 
     bool pqEmpty() { return !priorityQueue.size(); }
 
-    unsigned long int getTimeComplexity() { return timeComplexityCounter; }
+    unsigned long int getTimeComplexity() { return timeComplexityCounterPQ; }
+
+
+    void resetObjectForTest(){
+        priorityQueue = {};
+        timeComplexityCounterPQ = 0;
+    }
 
 
     void buildPriorityQueue(const vector<int> &numbers){
         for(auto &num : numbers){
             // Push numbers from vector to create priority queue
+            timeComplexityCounterPQ++;
             push(num);
         }
     }
@@ -37,7 +44,6 @@ public:
         for(size_t i = 1; i < k; i++){
             pop();
             // Increment counter - Linear time complexity
-            timeComplexityCounter++;
         }
 
         return priorityQueue[0];
@@ -76,9 +82,9 @@ public:
 private:
 
     // Vector to store min heap elements
-    vector<int> priorityQueue;
+    vector<int> priorityQueue = {};
 
-    unsigned long int timeComplexityCounter = 0;
+    unsigned long int timeComplexityCounterPQ = 0;
 
     // Recursive Heapify-down algorithm
     // Parent node and its two direct children out of order
@@ -100,7 +106,7 @@ private:
         // Swap with child having lesser value than parent
         if (smallest != i) {
             // 1 swap operation when child is less than its parent
-            timeComplexityCounter++;
+            timeComplexityCounterPQ++;
             swap(priorityQueue[i], priorityQueue[smallest]);
             // Call heapify-down on the child
             heapify_down(smallest);
@@ -117,7 +123,7 @@ private:
         if (i && priorityQueue[parent] > priorityQueue[i]) 
         {
             // 1 swap operation when node and its parent are not in order
-            timeComplexityCounter++;
+            timeComplexityCounterPQ++;
 
             // Swap the two nodes if heap is not in order
             swap(priorityQueue[i], priorityQueue[parent]);
