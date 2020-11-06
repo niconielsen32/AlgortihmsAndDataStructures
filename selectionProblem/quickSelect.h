@@ -46,14 +46,14 @@ int quickSelect(vector<int>& numbers, int left, int right, int kthElement){
             timeComplexityCounter++;
             rightPointer--;
             } else { 
-            // the value is smaller than the pivot - increment pointer and keep going
+            // The value is smaller than the pivot - increment pointer and continue
             leftPointer++;
             }
         }
 
-        // if we incremented left pointer so its greater than pivot we need to decrement by one
+        // If we incremented left pointer so its greater than pivot we need to decrement by one
         if (numbers[leftPointer] > pivot)
-        leftPointer--;
+            leftPointer--;
 
         // the left pointer is on the end of the first k elements
         if (kthElement <= leftPointer) {
