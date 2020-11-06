@@ -4,8 +4,8 @@
 #include <queue> 
 #include <random>
 #include <fstream>
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
+#include <stdlib.h> 
+#include <time.h>   
 
 // Problem 1
 #include "priorityQueue.h"
@@ -13,11 +13,6 @@
 #include "quickSelect.h"
 
 using namespace std;
-
-
- 
-
- 
 
 
 
@@ -108,10 +103,10 @@ int main()
             // Problem 2 - Quickselect
             int kthSmalletsQuick = quickSelect(testNumbers, 0, testNumbers.size()-1, randomK);
 
-            cout << "Time Complexity - Number of Operations 2: " << timeComplexityCounter << endl;
+            //cout << "Time Complexity - Number of Operations 2: " << timeComplexityCounter << endl;
 
-            //cout << "k'smallets quickSelect: " << kthSmalletsQuick << endl;
-            //cout << "PQ: " << kthSmalletsPQ << endl;
+            cout << "k'th smallets quickSelect: " << kthSmalletsQuick << endl;
+            cout << "k'th smallets PQ: " << kthSmalletsPQ << endl;
 
             numberOfOperations2.push_back(timeComplexityCounter);
 
@@ -158,15 +153,11 @@ int main()
 
     }
 
-
-
-
         //cout << "Time Complexity - Number of Elements: " << pq.getPriorityQueueSize() << endl;
         //cout << "k'th smallest element: " << pq.kSmallestElement(11) << endl;
         //cout << "Time Complexity - Number of Operations: " << pq.getTimeComplexity() << endl;
 
         //cout << endl;
-
 
     
     outputFile.open(filename);
