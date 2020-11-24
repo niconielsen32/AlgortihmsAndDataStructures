@@ -3,10 +3,10 @@
 
 #include "tree.h"
 
-int minStepToReachTarget(int boardHeight, int boardWidth, int knightStartPosX, int knightStartPosY, int knightEndPosX, int knightEndPosY){
+int MinimumSteps(int BoardHeight, int BoardWidth, int KnightStartXPosition, int knightStartYPosition, int knightEndXPosition, int knightEndYPosition){
 
     unique_ptr<Tree> tree;
-    return tree->minStepToReachTargetClass(boardHeight, boardWidth, knightStartPosX, knightStartPosY, knightEndPosX, knightEndPosY);
+    return tree->minStepToReachTargetClass(BoardHeight, BoardWidth, KnightStartXPosition, knightStartYPosition, knightEndXPosition, knightEndYPosition);
 
 }
 
